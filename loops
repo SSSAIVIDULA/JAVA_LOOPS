@@ -1,0 +1,66 @@
+FIBONAACI SERIES
+import java.util.*;
+class solution {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int first=0;
+        int second=1;
+        int next=0;
+        System.out.print(first+" "+second);
+        next=first+second;
+        while(next<=n){
+            first=second;
+            second=next;
+            System.out.print(" "+next);
+            next=first+second;
+        }
+    }
+}
+----------------------------------------------------------------
+SUM OF DIGITS
+import java.util.*;
+class solution{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int sum=0;
+        int rem=0;
+        while(n!=0){
+            rem=n%10;
+            sum=sum+rem;
+            n=n/10;
+        }
+        System.out.println(sum);
+    }
+}
+----------------------------------------------------------------
+REVERSE OF DIGITS 
+import java.util.*;
+class solution{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int rem,rev=0;
+        while(n!=0){
+            rem=n%10;
+            rev=rev*10+rem;
+            n=n/10;
+        }
+        System.out.println(rev);
+    }
+}
+
+import java.util.*;
+class solution{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String n=sc.next();
+        String rev="";
+        for(int i=n.length()-1;i>=0;i--){
+            rev=rev+n.charAt(i);
+        }
+        System.out.print(rev);
+    }
+}
+--------------------------------------------------------------
