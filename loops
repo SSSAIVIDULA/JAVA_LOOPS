@@ -132,3 +132,134 @@ class sol{
     }
 }
 ------------------------------------------------------------------------
+BINARY TO DECIMAL
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String n=sc.next();
+        int decimal=0;
+        int power=n.length()-1;
+        for(int i=0;i<n.length();i++){
+            char bit=n.charAt(i);
+            if(bit=='1'){
+                decimal=decimal+(int)Math.pow(2,power);
+            }
+            power--;
+        }
+        System.out.println(decimal);
+    }
+}
+-------------------------------------------------------------------------------
+CUBE OF SUM OF EVEN NUMBERS IN A RANGE
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+        int cube=0;
+        int result=0;
+        while(n1<=n2){
+            if(n1%2==0){
+                result=result+n1;
+            }
+            n1++;
+        }
+        System.out.print(result*result*result);
+    }
+}
+-------------------------------------------------------------------------------------
+COUNT
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int count=0;
+        do{
+            count++;
+            n=n/10;
+        }while(n!=0);
+    System.out.println(count);
+        
+    }
+    
+}
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String n=sc.next();
+        int count=0;
+        for(int i=0;i<n.length();i++){
+            count++;
+        }
+        System.out.println(count);
+        
+    }
+}
+-----------------------------------------------------------------------------------------
+SUM OF FIRST AND LAST 
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int last=n%10;
+        String str=String.valueOf(n);
+        char ch=str.charAt(0);
+        int first=ch-'0';
+        System.out.print(first+last);
+    }
+}
+
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int last=n%10;
+        int first=0;
+        while(n>0){
+            first=n%10;
+            n=n/10;
+        }
+        System.out.print(first+last);
+    }
+}
+----------------------------------------------------------------------------
+TWIN PRIME 
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=1;i<=n;i++){
+            boolean p1=false;
+            boolean p2=false;
+            int count=0;
+            for(int j=1;j<=i;j++){
+                if(i%j==0){
+                    count++;
+                }
+            }
+            if(count==2){
+                p1=true;
+            }
+            count=0;
+            int next=i+2;
+            for(int j=1;j<=next;j++){
+                if(next%j==0){
+                    count++;
+                }
+            }
+            if(count==2){
+                p2=true;
+            }
+            if(p1 && p2){
+                System.out.println("("+i+","+next+")");
+            }
+        }
+    }
+}
