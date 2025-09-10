@@ -263,3 +263,102 @@ class sol{
         }
     }
 }
+----------------------------------------------------------------------------------
+AUTOMORPHIC NUMBER
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+        while(n1<=n2){
+            int temp=n1;
+            int sq=n1*n1;
+            int divisor=1;
+            while(temp>0){
+                divisor=divisor*10;
+                temp=temp/10;
+            }
+            if(sq%divisor==n1){
+                System.out.println(n1);
+            }
+            n1++;
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+AMSTRONG NUMBER 
+
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int temp=n;
+        int count=0;
+        String n1=String.valueOf(n);
+        int len=n1.length();
+        int ams=0;
+       while(n!=0){
+           int rem=n%10;
+           ams=ams+(int)Math.pow(rem,len);
+           n=n/10;
+       }
+       if(temp==ams){
+           System.out.println("yes");
+       }
+       else{
+           System.out.println("no");
+       }
+       
+    }
+}
+
+
+BETWEEN RANGE
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+        while(n1<n2){
+            int temp=n1;
+            String t=String.valueOf(n1);
+            int power=t.length();
+            int rem,ams=0;
+            while(temp!=0){
+                 rem=temp%10;
+                ams=ams+(int)Math.pow(rem,power);
+                temp=temp/10;
+            }if(ams==n1){
+                System.out.println(ams);
+            }
+            n1++;
+            
+        }
+    }
+}
+------------------------------------------------------------------------------------
+HARSHAD NUMBER 
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String n1=String.valueOf(n);
+        int sum=0;
+        for(int i=0;i<n1.length();i++){
+            char c=n1.charAt(i);
+            int num=c-'0';
+            sum=sum+num;
+        }
+        System.out.println(sum);
+        if(n%sum==0){
+            System.out.println("yes");
+        }
+        else{
+            System.out.println("no");
+        }
+    }
+}
