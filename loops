@@ -667,3 +667,122 @@ class sol{
      
     }
 }
+-------------------------------------------------------------------------------
+CATALAN NUMBER 
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int k=0;k<=n;k++){
+            long res=1;
+            int r=k;
+            if(r>(2*k-r)){
+                r=2*k-r;
+            }
+            for(int i=0;i<r;i++){
+                res=res*(2*k-i);
+                res=res/(i+1);
+            }
+            long cat=res/(k+1);
+            System.out.println("C("+k+")="+cat);
+        }
+    }
+}
+---------------------------------------------------------------------------------
+FLYOD'S TRIANGLE 
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int num=1;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<i;j++){
+                System.out.print(num+" ");
+                num++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+---------------------------------------------------------------------------------------
+CUBE ROOT
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+       int cube=(int)Math.round(Math.cbrt(n));
+       if(cube*cube*cube==n){
+           System.out.print("yes");
+       }
+       else{
+           System.out.print("no");
+       }
+    }
+}
+------------------------------------------------------------------------------------------
+CLIMBING STAIRS
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(n<=2){
+            System.out.print(n);
+        }
+        int a=1;
+        int b=2;
+        int ways=0;
+        for(int i=3;i<=n;i++){
+            ways=a+b;
+            a=b;
+            b=ways;
+        }
+        System.out.print(b);
+    }
+}
+-----------------------------------------------------------------------------------------
+ALPHABET-> ASCII->HEXDECIMAL
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        char ch=sc.next().charAt(0);
+        int n=(int)ch;
+        System.out.println(n);
+        String hex=Integer.toHexString(n);
+        System.out.print(hex);
+        
+    }
+}
+--------------------------------------------------------------------------------------------
+TRIBONACCI SERIES 
+import java.util.*;
+class sol{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a=0;
+        int b=1;
+        int c=1;
+        int next=0;
+        System.out.print(a+" "+b+" "+c+" ");
+        for(int i=3;i<=n;i++){
+            next=a+b+c;
+            System.out.print(next+" ");
+            a=b;
+            b=c;
+            c=next;
+            
+            
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------
