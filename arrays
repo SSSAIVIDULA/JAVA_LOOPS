@@ -75,4 +75,131 @@ public class Main{
     }
 }
 -----------------------------------------------------------------------------------------------
+SPLIT EACH LETTER IN WORD
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        str=str.trim();
+        char[] arr=str.toCharArray();
+        System.out.print(Arrays.toString(arr));
+    }
+}
+-----------------------------------------------------------------------------------------------
+MATRIX ADDITION 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int r=sc.nextInt();
+        int c=sc.nextInt();
+        int[][] arr1=new int[r][c];
+        int[][] arr2=new int[r][c];
+        int[][] res=new int[r][c];
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                arr1[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                arr2[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                res[i][j]=arr1[i][j]+arr2[i][j];
+            }
+        }
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                System.out.print(res[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+---------------------------------------------------------------------------------------------
+TWO ARRAY EQUAL
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr1=new int[n];
+        int[] arr2=new int[n];
+        for(int i=0;i<n;i++){
+            arr1[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            arr2[i]=sc.nextInt();
+        }
+        if(Arrays.equals(arr1,arr2)){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
+    }
+}
+-----------------------------------------------------------------------------------------
+SORTING 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        Arrays.sort(arr);
+        System.out.print(Arrays.toString(arr));
+    }
+}
+-----------------------------------------------------------------------------------------
+ARRAY RANK 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int[] res=new int[n];
+        for(int i=0;i<n;i++){
+            res[i]=n;
+            for(int j=0;j<n;j++){
+                if(arr[i]<arr[j]){
+                    res[i]--;
+                }
+            }
+        }
+        for(int i=0;i<n;i++){
+            System.out.print(res[i]+" ");
+        }
+        System.out.print(Arrays.toString(res));
+    }
+}
+--------------------------------------------------------------------------------------------
+CAPTIALIZE FIRST LETTERS
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String sb=sc.nextLine();
+        StringBuilder str=new StringBuilder(sb);
+        for(int i=0;i<str.length();i++){
+            char c=str.charAt(i);
+            if(i==0|| str.charAt(i-1)==' '){
+                str.setCharAt(i,Character.toUpperCase(c));
+            }
+            
+        }
+        System.out.print(str);
+    }
+}
 
