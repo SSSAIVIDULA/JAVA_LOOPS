@@ -203,3 +203,99 @@ public class Main{
     }
 }
 
+
+PRINT THAT ALONE 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        StringBuilder str=new StringBuilder(s);
+        for(int i=0;i<str.length();i++){
+            char c=str.charAt(i);
+            if(i==0|| str.charAt(i-1)==' '){
+                System.out.print(Character.toUpperCase(c)+" ");
+            }
+        }
+       
+    }
+}
+-------------------------------------------------------------------------------------------
+VOWELS AND CONSONENT COUNT
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        str=str.toLowerCase();
+        int vowels=0;
+        int consonent=0;
+        
+        for(int i=0;i<str.length();i++){
+            char c=str.charAt(i);
+            if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u'){
+                vowels++;
+            }
+            else if(c>='a' && c<='z'){
+                consonent++;
+            }
+        }
+        System.out.print(vowels+" "+consonent);
+        
+    }
+}
+---------------------------------------------------------------------------------------------
+STRING COMPRESSION 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        StringBuilder str=new StringBuilder();
+        for(int i=0;i<s.length();i++){
+            int count=1;
+            while(i+1<s.length() && s.charAt(i)==s.charAt(i+1)  ){
+                count++;
+                i++;
+            }
+            str.append(s.charAt(i)).append(count);
+        }
+        System.out.print(str);
+    }
+}
+-----------------------------------------------------------------------------------------------
+SWAP MAXIMUM AND MINIMUM
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int minindex=0;
+        int maxindex=0;
+        int max=arr[0];
+        int min=arr[0];
+        for(int i=0;i<n;i++){
+            if(arr[i]>max){
+                max=arr[i];
+                maxindex=i;
+            }
+        }
+        for(int i=0;i<n;i++){
+            if(arr[i]<min){
+                min=arr[i];
+                minindex=i;
+            }
+        }
+        int temp=arr[maxindex];
+       arr[maxindex]=arr[minindex];
+       arr[minindex]=temp;
+       for(int i=0;i<n;i++){
+           System.out.print(arr[i]+" ");
+       }
+    }
+}
