@@ -299,3 +299,124 @@ public class Main{
        }
     }
 }
+------------------------------------------------------------------------------------------
+GCD ARRAY 
+
+import java.util.*;
+import java.math.BigInteger;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        BigInteger gcd=BigInteger.valueOf(arr[0]);
+        for(int i=1;i<n;i++){
+            gcd=gcd.gcd(BigInteger.valueOf(arr[i]));
+        }
+        System.out.print(gcd);
+    }
+}
+------------------------------------------------------------------------------------------------
+CAMEL CASE TO SNAKE CASE 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        String str2=str.replaceAll("([a-z])([A-Z])","$1_$2").toLowerCase();
+        System.out.print(str2);
+    }
+}
+-----------------------------------------------------------------------------------------------
+MATRIX MULTIPLICATION 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int r=sc.nextInt();
+        int c1=sc.nextInt();
+        int c2=sc.nextInt();
+        int[][] arr1=new int[r][c1];
+        int[][] arr2=new int[c1][c2];
+        int[][] res=new int[r][c2];
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c1;j++){
+                arr1[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0;i<c1;i++){
+            for(int j=0;j<c2;j++){
+                arr2[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c2;j++){
+                res[i][j]=0;
+                for(int k=0;k<c1;k++){
+                    res[i][j]+=arr1[i][k]*arr2[k][j];
+                }
+            }
+        }
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c2;j++){
+                System.out.print(res[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+---------------------------------------------------------------------------------------------
+
+APPLE DISTRIBUTION 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int applecount=sc.nextInt();
+        int boxcount=sc.nextInt();
+        int totalapples=0;
+        int count=0;
+        int[] apples=new int[applecount];
+        int[] boxes=new int[boxcount];
+        for(int i=0;i<applecount;i++){
+            apples[i]=sc.nextInt();
+            totalapples+=apples[i];
+        }
+        for(int i=0;i<boxcount;i++){
+            boxes[i]=sc.nextInt();
+        }
+        Arrays.sort(boxes);
+        for(int i=boxcount-1;i>=0;i--){
+            totalapples-=boxes[i];
+            count++;
+            if(totalapples<0){
+                break;
+            }
+        }
+        System.out.print(count);
+       
+        
+    }
+}
+---------------------------------------------------------------------------------------------
+PALLINDROME 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        StringBuilder str=new StringBuilder(s);
+        String rev=str.reverse().toString();
+        System.out.println(rev);
+        if(s.equals(rev)){
+            System.out.print("yes");
+        }
+        else{
+            System.out.print("no");
+        }
+    }
+}
+------------------------------------------------------------------------------------------------
