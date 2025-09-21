@@ -420,3 +420,30 @@ public class Main{
     }
 }
 ------------------------------------------------------------------------------------------------
+A AN THE COUNT
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine().toLowerCase();
+        String[] words=str.split(" ");
+        int a=0;
+        int an=0;
+        int the=0;
+        for(int i=0;i<words.length;i++){
+            if(words[i].equals("an")){
+                an++;
+            }
+            if(words[i].equals("a")){
+                a++;
+            }
+            if(words[i].equals("the")){
+                the++;
+            }
+        }
+        System.out.print(a+" "+an+" "+the);
+        
+    }
+}
+--------------------------------------------------------------------------------------------------
+
