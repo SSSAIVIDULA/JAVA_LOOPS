@@ -537,3 +537,50 @@ public class Main{
     }
 }
 ---------------------------------------------------------------------------------------------------------------
+WORD FREQUENCY
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine().toLowerCase();
+        String[] words=str.split(" ");
+        List<String> wordslist=Arrays.asList(words);
+        Set<String> unique=new LinkedHashSet<>(wordslist);
+        for(String word:unique){
+            System.out.println(word+"-"+Collections.frequency(wordslist,word));
+        }
+        
+    }
+    
+    
+}
+----------------------------------------------------------------------------------------------------------------
+PALLINDROME COUNT IN ARRAY 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int nn=sc.nextInt();
+        int[] arr=new int[nn];
+        for(int i=0;i<nn;i++){
+            arr[i]=sc.nextInt();
+        }
+        int count=0;
+        for(int i=0;i<nn;i++){
+            int temp=arr[i];
+            int n=temp;
+            int rem=0;
+            int rev=0;
+            while(n!=0){
+                rem=n%10;
+                rev=rev*10+rem;
+                n=n/10;
+            }
+            if(rev==temp){
+                count++;
+            }
+        }
+        System.out.print(count);
+    }
+}
+-----------------------------------------------------------------------------------------------------------
