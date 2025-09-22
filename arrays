@@ -446,4 +446,47 @@ public class Main{
     }
 }
 --------------------------------------------------------------------------------------------------
+WORDS TO SENTENCE
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String[] str=new String[n];
+        for(int i=0;i<n;i++){
+            str[i]=sc.next();
+        }
+        StringBuilder str2=new StringBuilder();
+        for(int i=0;i<n;i++){
+            str2.append(str[i]);
+            if(i<n-1){
+            str2.append(" ");
+        }
+        }
+    
+        System.out.print(str2);
+    }
+}
+-----------------------------------------------------------------------------------------------------
+INDEX OF PATTERN 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str1=sc.nextLine();
+        String str2=sc.nextLine();
+        int index=str1.indexOf(str2);
+        if(index==-1){
+            System.out.print("-1");
+        }
+        while(index!=-1){
+            System.out.print(index);
+            index=str1.indexOf(str2,index+1);
+            if(index!=-1){
+                System.out.print(",");
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------
 
