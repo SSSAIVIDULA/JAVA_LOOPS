@@ -330,6 +330,28 @@ public class Main{
         System.out.print(str2);
     }
 }
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        StringBuilder copy=new StringBuilder();
+        for(int i=0;i<str.length();i++){
+             char c=str.charAt(i);
+            if(c==Character.toUpperCase(c)&& i>0){
+                copy.append("_");
+                copy.append(Character.toLowerCase(c));
+            }
+            
+            else{
+                copy.append(c);
+            }
+        }
+
+        System.out.print(copy);
+    }
+}
 -----------------------------------------------------------------------------------------------
 MATRIX MULTIPLICATION 
 import java.util.*;
@@ -465,6 +487,28 @@ public class Main{
         }
     
         System.out.print(str2);
+    }
+}
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String[] str=new String[n];
+        for(int i=0;i<n;i++){
+            str[i]=sc.next();
+        }
+        StringBuilder copy=new StringBuilder();
+        for(int i=0;i<n;i++){
+            copy.append(str[i]);
+            if(i<n-1){
+                copy.append(" ");
+            }
+        }
+        copy.setCharAt(0,Character.toUpperCase(copy.charAt(0)));
+        copy.append(".");
+        System.out.print(copy);
     }
 }
 -----------------------------------------------------------------------------------------------------
@@ -822,3 +866,67 @@ public class Main{
     }
 }
 ----------------------------------------------------------------------------------------------------------------------------------
+SUM OF ELEMENTS EXCEPT FIRST AND LAST
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int sum=0;
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        Arrays.sort(arr);
+        for(int i=1;i<n-1;i++){
+            sum=sum+arr[i];
+        }
+        System.out.print(sum);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------
+DIFFERENCE OF MAX AND MIN
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int sum=0;
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        Arrays.sort(arr);
+        System.out.print(arr[0]-arr[n-1]);
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------
+EMAIL PRIVACY 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        String str2="@gmail.com";
+        int index=str.indexOf(str2);
+        StringBuilder copy=new StringBuilder();
+        for(int i=0;i<str.length();i++){
+            if(i==0){
+                copy.append(str.charAt(i));
+            }
+            else if(i>=index){
+                copy.append(str.charAt(i));
+            }
+            else if(i==index-1){
+                copy.append(str.charAt(i));
+            }
+            else{
+                copy.append("*");
+            }
+            
+        }
+        System.out.print(copy.toString());
+        
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
