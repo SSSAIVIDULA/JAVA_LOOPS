@@ -667,3 +667,158 @@ public class Main{
     }
 }
 ---------------------------------------------------------------------------------------------------
+ARRAY ROTATION 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int j=0;j<a;j++){
+        int first=arr[0];
+        for(int i=0;i<n;i++){
+            if(i<n-1){
+            arr[i]=arr[i+1];
+        }
+        }
+        arr[n-1]=first;
+        }
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------
+STRING ROTATION 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int n=sc.nextInt();
+        StringBuilder str=new StringBuilder(s);
+        for(int j=0;j<n;j++){
+        char first=str.charAt(0);
+        for(int i=0;i<str.length();i++){
+            if(i<str.length()-1){
+            str.setCharAt(i,str.charAt(i+1));
+        }
+        }
+        str.setCharAt(str.length()-1,first);
+        }
+        System.out.print(str.toString());
+    }
+}
+---------------------------------------------------------------------------------------------------------
+LONGEST COMMON PREFIX
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String[] words=new String[n];
+        for(int i=0;i<n;i++){
+            words[i]=sc.next();
+        }
+        
+        
+        String current=words[0];
+        for(int i=1;i<n;i++){
+            String str1=words[i];
+             StringBuilder copy=new StringBuilder();
+             int len=Math.min(str1.length(),current.length());
+            for(int j=0;j<len;j++){
+                if(current.charAt(j)==str1.charAt(j)){
+                    copy.append(str1.charAt(j));
+                }
+                else{
+                    break;
+                }
+            }
+            current=copy.toString();
+        }
+        
+        System.out.print(current);
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+EVEN PRIMES
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a=n;
+        int temp=0;
+        int j=0;
+        int[] res=new int[n];
+        while(n!=0){
+             temp++;
+             int count=0;
+             for(int i=1;i<=temp;i++){
+                 if(temp%i==0){
+                     count++;
+                 }
+             }
+             if(count==2){
+                 res[j++]=temp;
+                 n--;
+             }
+             
+        }
+        for(int i=0;i<a;i+=2){
+            System.out.print(res[i]+" ");
+        }
+        
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------
+STRING ADDITION UPTO SINGLE DIGIT
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        int sum=0;
+        for(int i=0;i<str.length();i++){
+            char c=str.charAt(i);
+            int value=c-96;
+            sum=sum+value;
+        }
+        System.out.println(sum);
+        int temp=sum;
+        while(sum>9){
+           int res=0;
+            while(temp!=0){
+                int rem=temp%10;
+                 res=res+rem;
+                temp=temp/10;
+            }
+            sum=res;
+            temp=res;
+            
+        }
+        System.out.print(sum);
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------
+REVERSE THE SENTENCE 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        String[] words=s.split(" ");
+        for(int i=words.length-1;i>=0;i--){
+            System.out.print(words[i]);
+            if(i>0){
+                System.out.print(" ");
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------
