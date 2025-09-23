@@ -584,3 +584,86 @@ public class Main{
     }
 }
 -----------------------------------------------------------------------------------------------------------
+PALLINDOMR STRING 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine().toLowerCase();
+        StringBuilder copy=new StringBuilder();
+        StringBuilder copy2=new StringBuilder();
+        StringBuilder ref=new StringBuilder();
+        for(int i=0;i<str.length();i++){
+            char c=str.charAt(i);
+            if(c!=' '){
+                copy.append(c);
+                copy2.append(c);
+            }
+        }
+        for(int i=copy2.length()-1;i>=0;i--){
+            char c=copy2.charAt(i);
+            ref.append(c);
+        }
+     
+        if(ref.toString().equals(copy.toString())){
+            System.out.print("yes");
+        }
+        else{
+            System.out.print("no");
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+CURRENT NUMBER TO THE POWER OF NEXT 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int[] arr=new int[n];
+     for(int i=0;i<n;i++){
+         arr[i]=sc.nextInt();
+     }
+     int[] res=new int[n];
+     for(int i=0;i<n;i++){
+         if(i<n-1){
+         res[i]=(int)Math.pow(arr[i],arr[i+1]);
+     }else{
+         res[i]=arr[i];
+     }
+     }
+     for(int i=0;i<n;i++){
+         System.out.print(res[i]+" ");
+     }
+    }
+}
+-----------------------------------------------------------------------------------------------------
+ADD EVEN , MULTIPLY ODD
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr1=new int[n];
+        int[] arr2=new int[n];
+        int[] res=new int[n];
+        for(int i=0;i<n;i++){
+            arr1[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            arr2[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            if(arr1[i]%2==0 && arr2[i]%2==0){
+                res[i]=arr1[i]+arr2[i];
+            }
+            else{
+                res[i]=arr1[i]*arr2[i];
+            }
+        }
+        for(int i=0;i<n;i++){
+            System.out.print(res[i]+" ");
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
