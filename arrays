@@ -930,3 +930,188 @@ public class Main{
     }
 }
 --------------------------------------------------------------------------------------------------------------------
+SNAKE CASE TO CAMEL
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        StringBuilder copy=new StringBuilder();
+        for(int i=0;i<str.length();i++){
+            char c=str.charAt(i);
+            if(c=='_'){
+                copy.append(Character.toUpperCase(str.charAt(i+1)));
+                i++;
+            }
+            else{
+                copy.append(c);
+            }
+        }
+        System.out.print(copy.toString());
+    }
+}
+---------------------------------------------------------------------------------------------------------------------
+2 PAIRS
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        Set<Character> set=new HashSet<>();
+        for(int i=0;i<str.length();i++){
+            char c=str.charAt(i);
+            if(Character.isUpperCase(c)){
+                set.add(Character.toLowerCase(c));
+            }
+        }
+        int count=0;
+        for(char s:set){
+            for(int i=0;i<str.length();i++){
+                char a=str.charAt(i);
+                if(a==s){
+                    count++;
+                    break;
+                }
+            }
+        }
+        System.out.print(count);
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------
+FIRST UNIQUE INDEX 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        
+        for(int i=0;i<str.length();i++){
+            int count=1;
+            for(int j=0;j<str.length();j++){
+                if(i!=j && str.charAt(i)==str.charAt(j)){
+                       count=0;
+                    break;
+                 
+                }
+            }
+             if(count==1){
+            System.out.print(i);
+            break;
+            }
+           
+        }
+        
+    }
+}
+---------------------------------------------------------------------------------------------------------
+RUN LENGTH ENCODING 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        int count=1;
+        StringBuilder copy=new StringBuilder();
+        for(int i=0;i<str.length()-1;i++){
+            
+            if(str.charAt(i)==str.charAt(i+1)){
+                count++;
+            }
+            else{
+                copy.append(str.charAt(i)).append(count);
+                count=1;
+            }
+        }
+        copy.append(str.charAt(str.length()-1)).append(count);
+        System.out.print(copy.toString());
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+COUNT DEVICE AFTER OPERATION 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int count=0;
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+           
+            if(arr[i]>0){
+                count++;
+                for(int j=i+1;j<n;j++){
+                    if(arr[j]>0){
+                    arr[j]--;
+                }
+                }
+            }
+        }
+            System.out.print(count);
+    }
+}
+---------------------------------------------------------------------------------------------------------------------
+BULLS AND COWS COUNT
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str1=sc.next();
+        String str2=sc.next();
+        int[] arr1=new int[4];
+        int[] arr2=new int[4];
+        for(int i=0;i<4;i++){
+            arr1[i]=str1.charAt(i)-'0';
+        }
+        for(int i=0;i<4;i++){
+            arr2[i]=str2.charAt(i)-'0';
+        }
+        int bullscount=0;
+        int cowscount=0;
+        int[] freq1=new int[10];
+        int[] freq2=new int[10];
+        for(int i=0;i<4;i++){
+            if(arr1[i]==arr2[i]){
+                cowscount++;
+            }
+            else{
+                freq1[arr1[i]]++;
+                freq2[arr2[i]]++;
+            }
+        }
+        for(int i=0;i<10;i++){
+            bullscount+=(int)Math.min(freq1[i],freq2[i]);
+        }
+        System.out.print(cowscount+" "+bullscount);
+    }
+}
+-------------------------------------------------------------------------------------------------------------------
+LAST STONE
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        if(n==1){
+            System.out.print(arr[0]);
+            return ;
+        }
+       while(true){
+           Arrays.sort(arr);
+           if(arr[n-2]==0){
+               System.out.print(arr[n-1]);
+               break;
+           }
+           arr[n-1]=arr[n-1]-arr[n-2];
+           arr[n-2]=0;
+       }
+        
+    }
+}
+------------------------------------------------------------------------------------------------------------------------
