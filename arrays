@@ -1547,3 +1547,29 @@ public class Main{
 }
 }
 ---------------------------------------------------------------------------------------------------------------------------------
+XOR OPERATION 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=4;
+        int[] arr1=new int[4];
+        int[] arr2=new int[4];
+        int total=0;
+        for(int i=0;i<n;i++){
+            arr1[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            arr2[i]=sc.nextInt();
+        }
+        int[] res=new int[4];
+        for(int i=0;i<n;i++){
+            res[i]=arr1[i]^arr2[i];
+        }
+        for(int i=0;i<n;i++){
+            total=total+res[i]*(int)Math.pow(2,n-1-i);
+        }
+        System.out.print(total);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
