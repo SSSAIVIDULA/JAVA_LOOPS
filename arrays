@@ -1573,3 +1573,154 @@ public class Main{
     }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
+BOWLING (LEETCODE)
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr1=new int[n];
+        int[] arr2=new int[n];
+        for(int i=0;i<n;i++){
+            arr1[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            arr2[i]=sc.nextInt();
+        }
+        int p1=0;
+        int p2=0;
+        for(int i=0;i<n;i++){
+            if(i>1){
+            if(arr1[i-1]==10 || arr1[i-2]==10){
+                p1=p1+arr1[i]*2;
+            }
+            else{
+                p1=p1+arr1[i];
+            }
+            }
+            else if(i==1){
+                if(arr1[i-1]==10){
+                    p1=p1+arr1[i]*2;
+                }
+                 else{
+                p1=p1+arr1[i];
+            }
+            }
+            else if(i==0){
+                 p1=p1+arr1[i];
+            }
+        }
+        
+        
+         for(int i=0;i<n;i++){
+            if(i>1){
+            if(arr2[i-1]==10 || arr2[i-2]==10){
+                p2=p2+arr2[i]*2;
+            }
+            else{
+                p2=p2+arr2[i];
+            }
+            }
+            else if(i==1){
+                if(arr2[i-1]==10){
+                    p2=p2+arr2[i]*2;
+                }
+                 else{
+                p2=p2+arr2[i];
+            }
+            }
+            else if(i==0){
+                 p2=p2+arr2[i];
+            }
+        }
+        System.out.print(p1+" "+p2);
+        
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------
+SENTENCE ROTATION 
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int n=sc.nextInt();
+        String[] str=s.split(" ");
+        for(int j=0;j<n;j++){
+        String first=str[0];
+        
+        for(int i=0;i<str.length-1;i++){
+            str[i]=str[i+1];
+        }
+        str[str.length-1]=first;
+        }
+        for(int i=0;i<str.length;i++){
+            System.out.print(str[i]+" ");
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+KEYBOARD(LEETCODE)
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String[] str=new String[n];
+        for(int i=0;i<n;i++){
+            str[i]=sc.next();
+        }
+        String row1="qwertyuiop";
+        String row2="asdfghjkl";
+        String row3="zxcvbnm";
+        for(int i=0;i<n;i++){
+            String current=str[i];
+            boolean r1=true;
+            boolean r2=true;
+            boolean r3=true;
+            for(int j=0;j<current.length();j++){
+                char c=current.charAt(j);
+                if(row1.indexOf(c)==-1){
+                    r1=false;
+                }
+                if(row2.indexOf(c)==-1){
+                    r2=false;
+                }
+                if(row3.indexOf(c)==-1){
+                    r3=false;
+                }
+            }
+            if(r1||r2||r3){
+                System.out.print(current+" ");
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------
+BINARY TO DECIMAL ARRAY
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr1=new int[n];
+        int[] arr2=new int[n];
+        int[] res=new int[n];
+        for(int i=0;i<n;i++){
+            arr1[i]=sc.nextInt();
+        }
+         for(int i=0;i<n;i++){
+            arr2[i]=sc.nextInt();
+        }
+         for(int i=0;i<n;i++){
+            res[i]=arr1[i]^arr2[i];
+        }
+        StringBuilder copy=new StringBuilder();
+        for(int i=0;i<n;i++){
+            copy.append(res[i]);
+        }
+        int decimal=Integer.parseInt(copy.toString(),2);
+        System.out.print(decimal);
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------
